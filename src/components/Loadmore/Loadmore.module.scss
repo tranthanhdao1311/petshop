@@ -1,0 +1,18 @@
+.loadmore  {
+    text-align: center;
+
+}
+
+.loadmore span {
+    background-color: var(--color-primary);
+    padding: 12px 25px;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s all linear;
+}
+
+.loadmore span:hover {
+    background-color: var(--color-secondary);
+}

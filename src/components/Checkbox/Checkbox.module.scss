@@ -1,0 +1,51 @@
+.hidden-input {
+    width: 1px;
+    overflow: hidden;
+}
+
+.checkbox {
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.custom-input {
+    width: 15px;
+    height: 15px;
+    border-radius: 1px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.content-radio {
+    border: 1px solid #eeddba;
+    padding: 9px 11px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.checked {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    position: relative;
+}
+
+
+
+.checked::after {
+    content: "";
+    background-image: url(//bizweb.dktcdn.net/100/432/370/themes/894869/assets/i-check.svg?1665454509075);
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 8px;
+    display: block;
+    background-size: contain;
+    position: absolute;
+    bottom: 2px;
+    right: 3px;
+    z-index: 2;
+}
+
+.checkbox:hover {
+    color: var(--color-primary);
+}

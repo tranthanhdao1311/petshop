@@ -1,0 +1,52 @@
+.hidden-input {
+    width: 1px;
+    overflow: hidden;
+}
+
+.content-radio {
+    border: 1px solid #eeddba;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-right: 6px;
+
+}
+
+.radio {
+    height: 94px !important;
+}
+
+
+.checked {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    position: relative;
+}
+
+.checked::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px;
+    border-color: transparent transparent #f9a529 transparent;
+    z-index: 1;
+}
+
+.checked::after {
+    content: "";
+    background-image: url(//bizweb.dktcdn.net/100/432/370/themes/894869/assets/i-check.svg?1665454509075);
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 8px;
+    display: block;
+    background-size: contain;
+    position: absolute;
+    bottom: 2px;
+    right: 3px;
+    z-index: 2;
+}

@@ -1,0 +1,19 @@
+.name-cate {
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-block;
+    padding: 7px 15px;
+    transition: 0.2s all linear;
+    border-radius: 20px;
+}
+.name-cate:hover {
+    color: var(--color-primary);
+    box-shadow: 0px 0px 18px 0px rgba(206,137,0,0.12);
+    background-color: white;
+}
+.active {
+    color: var(--color-primary);
+    box-shadow: 0px 0px 18px 0px rgba(206,137,0,0.12);
+    background-color: white;
+}

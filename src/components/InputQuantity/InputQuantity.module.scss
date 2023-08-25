@@ -1,0 +1,22 @@
+.input {
+    width: 70px;
+    height: 45px;
+    outline: none;
+    border: 1px solid #ebebeb;
+    padding: 10px;
+}
+
+.quantity {
+    position: relative;
+}
+
+.box-edit-quantity {
+    position: absolute;
+    right: 6px;
+    top: 16%;
+}
+
+.box-edit-quantity .icon {
+    display: block;
+    cursor: pointer;
+}

@@ -1,0 +1,48 @@
+.accessory {
+    background-image: url("//bizweb.dktcdn.net/100/432/370/themes/894869/assets/bg-accessories.png?1676276556806");
+    padding: 80px 0;
+}
+
+.custom-heading h2 {
+    color: white;
+}
+
+.box-seemore {
+    margin-top: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.icon-seemore {
+    color: white;
+    font-size: 14px;
+}
+
+.see-more {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    padding-right: 5px;
+}
+
+
+.box-seemore:hover .see-more {
+    color: #363025;
+
+
+}
+
+.box-seemore:hover .icon-seemore {
+    color: #363025
+}
+
+.custom-item {
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .product-on-sale {
+        margin-top: 30px;
+    }
+
+}

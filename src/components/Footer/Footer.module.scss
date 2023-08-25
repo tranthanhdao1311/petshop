@@ -1,0 +1,65 @@
+.footer {
+    background-image: url("//bizweb.dktcdn.net/100/432/370/themes/894869/assets/bg-footer.png?1676276556806");
+    padding: 60px 0 30px;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.list-menu {
+    margin-bottom: 45px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+}
+
+.item-menu {
+    padding: 0 30px;
+    font-size: 18px;
+}
+
+.item-menu a {
+    color: white;
+    transition: 0.2s all linear;
+
+}
+
+.item-menu a:hover {
+    color: #363025;
+
+}
+
+.social-footer {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.item-social {
+    padding: 0 24px;
+    font-size: 18px;
+    color: white;
+}
+
+.item-social svg {
+
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .item-menu {
+        display: none;
+        margin-bottom: 0;
+    }
+    .logo img  {
+        height: 90px;
+    }
+}

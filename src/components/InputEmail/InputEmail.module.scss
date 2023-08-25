@@ -1,0 +1,23 @@
+.input-value {
+  padding: 0 20px;
+  margin-bottom: 8px;
+  display: block;
+  width: 100%;
+  line-height: 40px;
+  border: 1px solid #e1e1e1;
+  outline: none;
+  border-radius: 10px;
+  font-size: 14px;
+
+  ::placeholder {
+    color: #e1e1e1;
+  }
+}
+.error {
+  font-size: 13px;
+  color: red;
+}
+
+.border-error {
+  border-color: red;
+}

@@ -1,0 +1,16 @@
+.title {
+    letter-spacing: 0;
+    display: block;
+    position: relative;
+    padding: 0px;
+    margin: 0px 0 20px;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+@media (max-width: 1200px) {
+    .title {
+        font-size: 18px;
+    }
+    
+}

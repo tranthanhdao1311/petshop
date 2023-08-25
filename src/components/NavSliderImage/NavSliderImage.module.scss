@@ -1,0 +1,14 @@
+.box-nav-img {
+    width: 100%;
+    padding: 0 5px;
+  }
+  
+  .box-nav-img img {
+    cursor: pointer;
+    border: 1px solid #ebebeb;
+  }
+  
+  
+    .selected{
+    border: 2px solid var(--color-primary);
+  }

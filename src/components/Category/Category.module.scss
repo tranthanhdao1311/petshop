@@ -1,0 +1,85 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap');
+.custom-category {
+    margin-top: 60px;
+}
+.title_module_main{
+    position: relative;
+    margin-bottom: 30px;
+}
+.title_module_main h2 {
+    padding-bottom: 35px;
+    text-align: center;
+    color: var(--color-secondary);
+    font-weight: 700;
+    font-size: 40px;
+    font-family: 'Pacifico', cursive;
+
+}
+
+.title_module_main h2::before {
+    background-image: url(//bizweb.dktcdn.net/100/432/370/themes/894869/assets/bg-title.png?1665454509075);
+    content: "";
+    width: 102px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -os-transform: translateX(-50%);
+}
+
+.item-category {
+    padding: 0 15px;
+    text-align: center;
+}
+
+.item-img {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-img {
+    width: 223px !important;
+    height: 223px;
+}
+
+.item-info-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+.item-info-desc {
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .title_module_main h2 {
+    
+        font-size: 21px;
+    
+    }
+    .item-info-title {
+        font-size: 16px;
+    font-weight: 600;
+
+    }
+    .item-info-desc {
+        margin-top: 14px;
+    font-weight: 500;
+
+    }
+    .custom-img {
+        width: 190px !important;
+        height: 190px;
+    }
+    .custom-category {
+        margin-top: 30px;
+    }
+}

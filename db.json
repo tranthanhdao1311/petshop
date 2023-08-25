@@ -1,0 +1,37 @@
+{
+  "products": [{
+      "id": 1,
+      "name": "Bình trữ thức ăn tự động 1,6L",
+      "image": "https://bizweb.dktcdn.net/thumb/large/100/432/370/products/62.png?v=1626747381930",
+      "category": "Phụ kiện cho hamster",
+      "desc": "Đây là mô tả",
+      "priceSale": 110000,
+      "cost": 210000,
+      "quantity": 200,
+      "brand": "Tropiclean",
+      "color": [
+        "Xanh",
+        "Hồng",
+        "Tím"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bình trữ thức ăn tự động 1,6L",
+      "image": "https://bizweb.dktcdn.net/thumb/large/100/432/370/products/62.png?v=1626747381930",
+      "category": "Phụ kiện cho hamster",
+      "priceSale": 110000,
+      "cost": 210000,
+      "quantity": "199"
+    },
+    {
+      "id": 3,
+      "name": "Bình trữ thức ăn tự động 1,6L",
+      "image": "https://bizweb.dktcdn.net/thumb/large/100/432/370/products/62.png?v=1626747381930",
+      "category": "Phụ kiện cho hamster",
+      "priceSale": 110000,
+      "cost": 210000,
+      "quantity": 200
+    }
+  ]
+}

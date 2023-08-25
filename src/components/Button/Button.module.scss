@@ -1,0 +1,29 @@
+.btn {
+    background: var(--color-primary);
+    margin-bottom: 8px;
+    border-radius: 8px;
+    max-width: 145px;
+    border: none;
+    height: 38px;
+    color: white;
+    font-size: 14px;
+    display: inline-block;
+    transition: all ease 0.3s;
+    text-align: start;
+    padding: 0 15px;
+    position: relative;
+}
+.btn:hover {
+    background-color: var(--color-secondary);
+}
+
+.title-btn {
+    padding-left: 12px;
+}
+
+@media (max-width:1200px) {
+    .btn {
+        display: none;
+    }
+    
+}

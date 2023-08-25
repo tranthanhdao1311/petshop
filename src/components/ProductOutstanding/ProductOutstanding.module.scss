@@ -1,0 +1,102 @@
+.title_module_main {
+    background-color: var(--color-primary);
+    padding: 12px 0;
+    position: relative;
+    margin-top: 150px;
+}
+
+.title_module_main:before {
+    background-image: url(//bizweb.dktcdn.net/100/432/370/themes/894869/assets/bg-title-bs1.png?1665454509075);
+    height: 176px;
+    width: 720px;
+    content: "";
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 2;
+    top: -130px;
+    left: 20%;
+    display: block;
+}
+
+.title_module_main h2 {
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: 'Pacifico', cursive;
+
+}
+
+.title_module_main h2 span:hover {
+    color: #333;
+    cursor: pointer;
+}
+
+.title_module_main h2:after {
+    background-image: url(//bizweb.dktcdn.net/100/432/370/themes/894869/assets/bg-title-bs3.png?1665454509075);
+    height: 192px;
+    width: 182px;
+    content: "";
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top: -90px;
+    left: 0;
+}
+
+.title_module_main h2:before {
+    background-image: url(//bizweb.dktcdn.net/100/432/370/themes/894869/assets/bg-title-bs2.png?1665454509075);
+    height: 192px;
+    width: 182px;
+    content: "";
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    top: -90px;
+    right: 0;
+}
+
+.box-bestsale {
+    padding: 30px;
+    border: 3px solid var(--color-primary);
+    border-top: 0;
+    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.box-bestsale .owl-carousel .owl-nav .owl-prev span {
+    position: absolute;
+    top: 40%;
+    right: 60px;
+    font-size: 80px;
+    display: block;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .title_module_main h2 {
+        font-size: 21px;
+    }
+
+    .title_module_main:before {
+        display: none;
+    }
+
+    .title_module_main h2:before {
+        width: 50px;
+        height: 50px;
+        top: -25px;
+    }
+    .title_module_main h2:after {
+        width: 50px;
+        height: 50px;
+        top: -25px;
+    }
+    .title_module_main {
+        margin-top: 40px;
+    }
+}
