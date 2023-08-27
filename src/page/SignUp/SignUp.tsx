@@ -14,10 +14,13 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import InputTogglePassword from '../../components/InputTogglePassword/InputTogglePassword';
 import Button from '../../components/Button/Button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as yup from "yup";
 
 import { Formik } from 'formik';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { auth, db } from '../../firebase/firebase-config';
+import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
 
 const cx = classNames.bind(styles);
 
@@ -88,11 +91,35 @@ const SignUp = () => {
 
 
     // }
+    
+
+    const [error, setErorr] = useState('')
+    const navigate = useNavigate()
+    const handleSubmitForm = async (values: any) => {
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
+            const user = userCredential.user;
+            await updateProfile(user, {
+                displayName: values.lastName + ' ' + values.firstName,
+            });
+            const uid = user.uid;
+            await setDoc(doc(db, "users", uid), {
+                firstname: values.firstName,
+                lastname: values.lastName,
+                phone: values.phone,
+                email: values.email,
+                createdAt: serverTimestamp(),
+            });
+            navigate('/account/login')
+        } catch (error: any) {
+            console.log(error)
+            if (error.code === 'auth/email-already-in-use') {
+                setErorr('Email đã tồn tại')
+
+            }
+        }
 
 
-    const handleSubmitForm = (values: any) => {
-        // setIsSubmitClicked(true)
-        console.log(values)
     }
 
 
@@ -169,7 +196,7 @@ const SignUp = () => {
                                                         error={formik.errors.phone}
                                                         onBlur={formik.handleBlur}
                                                         type='text'
-                                                        placeholder='Số điện thoại' ></InputValue>
+                                                        placeholder='Số điện thoại'></InputValue>
 
 
 
@@ -181,7 +208,7 @@ const SignUp = () => {
                                                         value={formik.values.email}
                                                         touched={formik.touched.email}
                                                         onChange={formik.handleChange}
-                                                        error={formik.errors.email}
+                                                        error={formik.errors.email || error}
                                                         onBlur={formik.handleBlur}
                                                         type='text'
                                                         placeholder='Email'></InputValue>

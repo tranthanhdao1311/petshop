@@ -11,7 +11,9 @@ import SignIn from "./page/SignIn/SignIn";
 import SignUp from "./page/SignUp/SignUp";
 // import "swiper/scss/autoplay";
 // import "swiper/scss";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import InfoUser from "./page/InfoUser/InfoUser";
 
 const App = () => {
   return (
@@ -27,12 +29,15 @@ const App = () => {
             <Route path="/danh-muc/:slug" element={<CategoryPage></CategoryPage>}></Route>
             <Route path="/:slug" element={<DetailPage></DetailPage>}></Route>
             <Route path="/gio-hang" element={<Cart></Cart>}></Route>
-            <Route path="/account/login" element={<SignIn></SignIn>}></Route>
+            <Route path="/account/login" element={<SignIn></SignIn> }></Route>
             <Route path="/account/register" element={<SignUp></SignUp>}></Route>
+            <Route path="/account" element={<InfoUser></InfoUser>}></Route>
           </Routes>
         </Router>
       </Suspense>
-    </div>
+      <ToastContainer />
+
+    </div >
   );
 };
 

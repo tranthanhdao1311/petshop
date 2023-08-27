@@ -73,3 +73,40 @@
   gap: 5px;
   justify-content: center;
 }
+
+.block-account {
+  font-family: "Open Sans",sans-serif;
+
+}
+
+.box-welcome {
+  font-weight: 700;
+  line-height: 16px;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.hello {
+  color: #212b25;
+}
+
+.name-user {
+  color: var(--color-primary);
+}
+
+.block-account ul {
+  padding-left: 0;
+  list-style: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #212b25;
+  font-weight: 400;
+}
+
+.block-account ul li {
+  margin-bottom: 28px;
+
+  &:hover a {
+    color: var(--color-primary);
+  }
+}

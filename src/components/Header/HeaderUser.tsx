@@ -36,10 +36,20 @@ import { useForm } from "react-hook-form";
 import Button from "../Button/Button";
 import axios from "axios";
 import { apiProduct } from "../../api";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase/firebase-config";
+import { setLogout } from "../../store/app/auth";
 const cx = classNames.bind(styles);
 
 const HeaderUser: React.FC = () => {
   // const [show, setShow] = useState<boolean>(false)
+
+  const userInfo = useSelector(
+    (state: any) => state.auth.user
+  );
+  const logout = useSelector(
+    (state: any) => state.auth.logout
+  );
   const showModalSearch = useSelector(
     (state: any) => state.app.toggleShowModal
   );
@@ -168,6 +178,11 @@ const HeaderUser: React.FC = () => {
     }
   }, [])
 
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    navigate("/");
+  };
   return (
     <>
       <div className={cx("wrapper")}>
@@ -316,23 +331,29 @@ const HeaderUser: React.FC = () => {
                             <div
                               className={cx("btn-login", "mb-0 py-2 ")}
                             >
-                              <Link
+                              {!auth.currentUser ? <Link
                                 to={'/account/login'}
                                 role="button"
                               >
                                 Đăng nhập
-                              </Link>
+                              </Link> :
+                                (<Link to={'/account'}>{userInfo.displayName}</Link>)
+                              }
+
                             </div>
                             <span className={cx("divier")}></span>
                             <div
                               className={cx("btn-register", "mb-0 py-2 ")}
                             >
 
-                              <Link to={'/account/register'}
+
+                              {!auth.currentUser ? <Link to={'/account/register'}
                                 role="button"
                               >
                                 Đăng ký
-                              </Link>
+                              </Link> :
+                                <span onClick={handleLogout} className={cx('logout')}>Đăng xuất</span>
+                              }
                             </div>
                           </div>
                         </div>

@@ -587,3 +587,10 @@ icon3:hover {
   overflow: hidden;
   overflow-y: auto;
 }
+
+.logout {
+  cursor: pointer;
+  &:hover {
+    color: var(--color-primary);
+  }
+}
