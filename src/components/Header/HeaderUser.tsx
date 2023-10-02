@@ -47,9 +47,7 @@ const HeaderUser: React.FC = () => {
   const userInfo = useSelector(
     (state: any) => state.auth.user
   );
-  const logout = useSelector(
-    (state: any) => state.auth.logout
-  );
+
   const showModalSearch = useSelector(
     (state: any) => state.app.toggleShowModal
   );
@@ -337,7 +335,7 @@ const HeaderUser: React.FC = () => {
                               >
                                 Đăng nhập
                               </Link> :
-                                (<Link to={'/account'}>{userInfo.displayName}</Link>)
+                                (<span><Link to={'/account'}>{auth.currentUser?.displayName}</Link></span>)
                               }
 
                             </div>

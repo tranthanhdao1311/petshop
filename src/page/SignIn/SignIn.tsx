@@ -15,6 +15,7 @@ import { onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../../store/app/auth';
 import { toast } from 'react-toastify';
+import InfoUser from '../InfoUser/InfoUser';
 const cx = classNames.bind(styles);
 
 const schema = yup.object().shape({
@@ -33,7 +34,8 @@ const schema = yup.object().shape({
 });
 const SignIn = () => {
 
-   
+    console.log(auth)
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -45,7 +47,7 @@ const SignIn = () => {
             await signInWithEmailAndPassword(auth, values.email, values.password);
 
             dispatch(setUser({ uid: auth.currentUser?.uid, email: auth.currentUser?.email, displayName: auth.currentUser?.displayName }))
-            navigate('/account')
+            navigate('/account');
 
         } catch (error: any) {
             console.log(error)
@@ -60,6 +62,22 @@ const SignIn = () => {
         }
 
 
+    }
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, user => {
+            if (user) {
+                // Người dùng đã xác thực, chuyển hướng đến trang /account
+                navigate('/account');
+            }
+        });
+
+        // Dọn dẹp trình nghe khi thành phần bị hủy
+        return () => unsubscribe();
+    }, [navigate]);
+
+    
+    if (auth.currentUser !== null) {
+        return null;
     }
 
 

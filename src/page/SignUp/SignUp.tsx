@@ -18,7 +18,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import * as yup from "yup";
 
 import { Formik } from 'formik';
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, updateProfile } from 'firebase/auth';
 import { auth, db } from '../../firebase/firebase-config';
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore';
 
@@ -91,7 +91,7 @@ const SignUp = () => {
 
 
     // }
-    
+
 
     const [error, setErorr] = useState('')
     const navigate = useNavigate()
@@ -119,6 +119,24 @@ const SignUp = () => {
             }
         }
 
+
+    }
+
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, user => {
+            if (user) {
+                // Người dùng đã xác thực, chuyển hướng đến trang /account
+                navigate('/account');
+            }
+        });
+
+        // Dọn dẹp trình nghe khi thành phần bị hủy
+        return () => unsubscribe();
+    }, [navigate]);
+
+    if (auth.currentUser !== null) {
+        return null;
 
     }
 

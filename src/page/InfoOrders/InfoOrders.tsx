@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DefaultLayout from '../../components/Layout/DefaultLayout/DefaultLayout';
-import styles from "./InfoUser.module.scss";
+import styles from "./InfoOrders.module.scss";
 import classNames from "classnames/bind";
 import { Formik } from 'formik';
 import * as yup from "yup";
@@ -35,8 +35,7 @@ const schema = yup.object().shape({
         .required("Vui lòng nhập trường này "),
 
 });
-const InfoUser = () => {
-    const active = ({ isActive }: any) => (isActive ? cx("active") : "");
+const InfoOrders = () => {
 
     const navigate = useNavigate()
 
@@ -87,15 +86,15 @@ const InfoUser = () => {
 
         <LayoutInfoUser>
             <div className={cx('box-title')}>
-                <h5 className={cx('title-head')}>THÔNG TIN TÀI KHOẢN</h5>
-                <div>
+                <h5 className={cx('title-head')}>ĐƠN HÀNG CỦA BẠN</h5>
+                {/* <div>
                     <p className={cx('title')}><strong>Họ tên: </strong> <span>{data?.lastname + ' ' + data?.firstname}</span></p>
                     <p className={cx('title')}><strong>Email: </strong><span>{data?.email}</span></p>
                     <p className={cx('title')}><strong>Điện thoại: </strong><span>{data?.phone}</span></p>
                     {data?.address &&
                         <p className={cx('title')}><strong>Địa chỉ: </strong></p>
                     }
-                </div>
+                </div> */}
 
             </div>
 
@@ -104,4 +103,4 @@ const InfoUser = () => {
     );
 };
 
-export default InfoUser;
+export default InfoOrders;
